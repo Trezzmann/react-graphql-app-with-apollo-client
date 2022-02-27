@@ -8,3 +8,20 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+.character {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 850px;
+  margin: auto;
+  text-align: left;
+}
+
+.episodes {
+  font-size: 0.8em;
+}
+
+.episodes p {
+  margin: 2px 0;
+}

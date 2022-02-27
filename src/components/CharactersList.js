@@ -14,7 +14,7 @@ export default function CharactersList() {
           <div key={index}>
             <img src={result.image} alt="avatar" />
             <h2>{result.name}</h2>
-            <Link to={`/${result.id}`}>learn more</Link>
+            <Link to={`/${result.id}`}>View more</Link>
           </div>
         ))}
       </div>
