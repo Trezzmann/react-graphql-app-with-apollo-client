@@ -1,12 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql
-} from "@apollo/client";
-
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 const client = new ApolloClient({
@@ -14,25 +9,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-client
-  .query({
-    query: gql`
-      query {
-        characters {
-          results {
-            name
-          }
-        }
-      }
-    `
-  })
-  .then((results) => console.log(results));
-
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ApolloProvider>
   </StrictMode>,
   rootElement

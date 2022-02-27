@@ -4,6 +4,7 @@ const GET_CARACTERS = gql`
   query {
     characters {
       results {
+        id
         name
         image
       }
